@@ -40,8 +40,9 @@ const userSchema = new mongoose.Schema({
     
 })
 
+//it is use for ganrating tokan
 userSchema.methods.generateAuthtoken = function(){
-    const token = jsonwebtoken.sign({ _id: this._id}, process.env.jsonwebtoken_SECRET);
+    const token = jsonwebtoken.sign({ _id: this._id}, process.env.JWT_SECRET);
     return token;
 }
 
