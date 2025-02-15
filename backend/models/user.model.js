@@ -28,6 +28,7 @@ const userSchema = new mongoose.Schema({
         password:{
             type:String,
             required:true,
+            //in this line we are use select false because we dont want to show password in response whenever we select the or fetch the user data at that time password will not showw in response
             select: false,
         },
 
